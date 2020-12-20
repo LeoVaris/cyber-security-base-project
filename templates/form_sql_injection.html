@@ -1,0 +1,26 @@
+<div>
+  <div class="col-5">
+      <p>Simple phone directory, search by first name</p><p>try searching for Mursu</p>
+
+      <form class="form-group" action="/SQL_injection" method="POST">
+          <div class="input-group">
+            <input type="text" class="form-control" name="first name">
+            <span class="input-group-btn">
+              <button class="btn btn-default">Search</button>
+            </span>
+          </div>
+      </form>
+      {% if empty %}
+          <p>Could not find anyone with that name</p>
+      {% endif %}
+      {% for result in results %}
+          <p>
+              {% for item in result %}
+                  {{ item }}
+              {% endfor %}
+          </p>
+      {% endfor %}
+      
+      <a href="/">Go back to home</a>
+  </div>
+</div>

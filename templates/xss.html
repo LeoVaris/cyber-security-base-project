@@ -1,0 +1,18 @@
+<div class="col-lg-6">
+  <h4>Forum topic: Tabs vs Spaces</h4>
+  {% if posts %}
+      <ol>
+          {% for post in posts %}
+              <li>{{ post.comment | safe }}</li>
+          {% endfor %}
+      </ol>
+  {% endif %}
+
+  Add a comment
+  <form action="/xss" method="POST">
+      <textarea name="comment"></textarea><br>
+      <button type="submit">Post</button>
+  </form>
+  <br>
+  <a href="/">Go back to home</a>
+</div>
